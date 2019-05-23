@@ -1,0 +1,20 @@
+---
+layout: default
+title: Assignments / Projects
+---
+    <h1>{{ page.title }}</h1>
+    <p>Listed Below are all the assignments / projects that we have completed over the semester.</p>
+        <ul class="posts">
+         {% for post in site.posts %}
+             {% if post.tags contains 'assignment' %}
+             <li>
+             <h3>
+             <a href="{{ post.url }}">
+             {{ post.title }}
+             <small>{{ post.date | date_to_string }}</small>
+             </a>
+             </h3>
+             </li>
+             {% endif %}
+         {% endfor %}
+        </ul>
